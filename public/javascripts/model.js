@@ -8,6 +8,7 @@ class Contact {
     this.phone_number = obj.phone_number;
     this.tags = obj.tags;
   }
+
   json() {
     return JSON.stringify(this);
   }
@@ -83,7 +84,7 @@ export default class Model {
 
   putContactToServer(id, formData) {
     let localObj = this.contacts.find(obj => obj.id === id);
-    let localObjClone = JSON.parse(JSON.stringify(localObj));
+    let localObjClone = new Contact(JSON.parse(JSON.stringify(localObj)));
     let newData = this._formatFormData(formData);
 
     for (let prop in newData) {
@@ -93,7 +94,7 @@ export default class Model {
     let request = new XMLHttpRequest();
     request.open('PUT', `http://localhost:3000/api/contacts/${id}`);
     request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-    request.send(JSON.stringify(localObjClone));
+    request.send(localObjClone.json());
 
     request.addEventListener('load', () => {
       if (request.status === 201) {

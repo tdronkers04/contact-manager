@@ -12,7 +12,6 @@ class Controller {
     this.view.bindAddContact(this.handleAddContact);
     this.view.bindDeleteContact(this.handleDeleteContact);
     this.view.bindEditContact(this.handleContactDisplay, this.handleEditContact);
-    // this.view.bindDisplayEditForm(this.handleContactDisplay);
   }
 
   onContactsChanged = (contacts) => {

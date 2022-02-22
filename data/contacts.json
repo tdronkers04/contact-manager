@@ -1,37 +1,79 @@
 [
   {
-    "full_name": "Bob Hope",
-    "phone_number": "123",
-    "email": "bob@hope.com",
-    "tags": "other",
-    "id": 1
-  },
-  {
-    "full_name": "ali",
-    "phone_number": "123",
-    "email": "alison.dronkers@gmail.com",
-    "tags": "family,friends,school",
-    "id": 2
-  },
-  {
     "full_name": "Joe Montana",
     "phone_number": "4155551616",
-    "email": "joe@nflhof.com",
-    "tags": "family,friends,work,school",
+    "email": "joe@nflhof.yahoo.com",
+    "tags": "family,friends",
     "id": 5
-  },
-  {
-    "full_name": "Bert",
-    "phone_number": "123",
-    "email": "bert@sesamestreet.com",
-    "tags": "family",
-    "id": 6
   },
   {
     "full_name": "Jerry Rice",
     "phone_number": "4152996680",
     "email": "jerry@hof.com",
-    "tags": "work,other",
+    "tags": "friends,work",
     "id": 7
+  },
+  {
+    "full_name": "Terrell Owens",
+    "phone_number": "8889998181",
+    "email": "to@cowboys.com",
+    "tags": "other",
+    "id": 8
+  },
+  {
+    "full_name": "Bryant Young",
+    "phone_number": "2221113333",
+    "email": "by@botredame.edy",
+    "tags": "school,other",
+    "id": 9
+  },
+  {
+    "full_name": "Bill Walsh",
+    "phone_number": "8887774452",
+    "email": "billy@sjsu.edu",
+    "tags": "friends,work",
+    "id": 10
+  },
+  {
+    "full_name": "Garrison heasrst",
+    "phone_number": "2221115555",
+    "email": "gmoney@gmail.com",
+    "tags": "family,friends",
+    "id": 11
+  },
+  {
+    "full_name": "Steve Young",
+    "phone_number": "121111222",
+    "email": "young@byu.edu",
+    "tags": "friends",
+    "id": 12
+  },
+  {
+    "full_name": "Nick Bosa",
+    "phone_number": "8889997777",
+    "email": "nick@golds.com",
+    "tags": "work,school",
+    "id": 13
+  },
+  {
+    "full_name": "Frank Gore",
+    "phone_number": "8889996622",
+    "email": "frank@miami.edu",
+    "tags": "school",
+    "id": 14
+  },
+  {
+    "full_name": "Charlie Gardner",
+    "phone_number": "1112223333",
+    "email": "charlie@49ers.com",
+    "tags": "school",
+    "id": 15
+  },
+  {
+    "full_name": "Harris Barton",
+    "phone_number": "1112223333",
+    "email": "harrB@49ers.com",
+    "tags": "work,school",
+    "id": 16
   }
 ]
