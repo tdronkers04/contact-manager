@@ -1,0 +1,47 @@
+<div class="modal-inner">
+  {{#if full_name}}
+  <h3>Edit Contact:</h3>
+  {{else}}
+  <h3>Create New Contact:</h3>
+  {{/if}}
+  <form id="contact-form">
+    {{#if full_name}}
+    <div class="'form-field">
+      <label for="full_name">Full Name: </label>
+      <input type="text" name="full_name" id="full_name" value="{{full_name}}" required>
+    </div>
+    <div class="form-field">
+      <label for="email">e-mail Address: </label>
+      <input type="email" name="email" id="email" value="{{email}}" required>
+    </div>
+    <div class="form-field">
+      <label for="phone_number">Phone Number: </label>
+      <input type="tel" name="phone_number" id="phone_number" value="{{phone_number}}" required>
+    </div>
+    {{else}}
+    <div class="'form-field">
+      <label for="full_name">Full Name: </label>
+      <input type="text" name="full_name" id="full_name" required>
+    </div>
+    <div class="form-field">
+      <label for="email">e-mail Address: </label>
+      <input type="email" name="email" id="email" required>
+    </div>
+    <div class="form-field">
+      <label for="phone_number">Phone Number: </label>
+      <input type="tel" name="phone_number" id="phone_number" required>
+    </div>
+    {{/if}}
+    <div class="form-field">
+      <label for="tags">Tags: </label>
+      <select name="tags" id="tags" multiple>
+        <option id="family" value="family">Family</option>
+        <option id="friends" value="friends">Friends</option>
+        <option id="work" value="work">Work</option>
+        <option id="school" value="school">School</option>
+        <option id="other" value="other">Other</option>
+      </select>
+    </div>
+    <input class="submit" type="submit" value="Submit">
+  </form>
+</div>

@@ -1,0 +1,168 @@
+html {
+  --grey: #e7e7e7;
+  --light-blue: #66A3D9;
+  --dark-green: #455931;
+  --beige: #F2D0A7;
+  --text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+  --box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+  font-family: 'Roboto Mono', monospace;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: var(--grey);
+}
+
+button {
+  border-radius: 3px;
+  background-color: var(--light-blue);
+  min-width: 70px;
+}
+
+.submit:hover, button:hover{
+  cursor: pointer;
+}
+
+a:link {
+  color: var(--dark-green);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: (var(--light-blue));
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+header {
+  position: relative;
+	padding: 30px 15px;
+	font-size: 30px;
+	text-align: center;
+  background-color: var(--dark-green);
+  color: var(--grey);
+	background-repeat: repeat-x;
+}
+
+header .search {
+  font-size: 15px;
+  margin-top: 20px;
+  border-color: var(--light-blue);
+}
+
+header .add-contact {
+  color: white;
+  text-align: center;
+  padding: 5px 10px;
+  margin-top: 15px;
+  display: inline-block;
+  font-size: 15px;
+}
+
+.empty {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 0.25fr));
+  grid-gap: 30px;
+  padding: 2rem;
+}
+
+.contact {
+  background-color: var(--beige);
+  padding: 1rem;
+  border-radius: 2%;
+  box-shadow: 3px 4px 5px var(--dark-green);
+}
+
+.contact div {
+  margin: 8px;
+}
+
+.contact div p {
+  margin-left: 12px;
+}
+
+.contact button {
+  color: white;
+  text-align: center;
+  padding: 5px 10px;
+  margin-top: 15px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.modal-outer {
+  display: grid;
+  background: hsla(0, 0%, 60%, 0.8);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.modal-outer.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-inner {
+  width: 75vw;
+  max-width: 400px;
+  min-height: 400px;
+  background: var(--grey);
+  outline: solid;
+  outline-color: var(--light-blue);
+  border-radius: 2%;
+  padding: 1em;
+  transform: translateY(200%);
+  transition: transform 1s;
+}
+
+.modal-outer.open .modal-inner {
+  transform: translateY(0);
+}
+
+.modal-inner form {
+  display: table;
+  margin: 1em;
+  padding: 1em;
+  width: 80%;
+}
+
+.modal-inner label,
+.modal-inner input,
+.modal-inner select {
+  display: table-cell;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.modal-inner input.submit {
+  background: var(--light-blue);
+  color: white;
+  margin-top: 10px;
+  width: 30%;
+}

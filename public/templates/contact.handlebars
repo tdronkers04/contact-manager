@@ -1,0 +1,18 @@
+<div class="contact" id="{{id}}">
+  <h3>{{full_name}}</h3>
+  <div>
+    <strong>e-mail:</strong>
+    <p>{{email}}</p>
+    <strong>Phone:</strong>
+    <p>{{phone_number}}</p>
+    <strong>Tags:</strong>
+    <p>
+      {{#each tags}}
+      <a href="#">{{this}}</a>
+      {{/each}}
+    </p>
+
+  </div>
+  <button class="edit-btn">Edit</button>
+  <button class="delete-btn">Delete</button>
+</div>
