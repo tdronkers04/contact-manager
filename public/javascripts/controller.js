@@ -12,6 +12,7 @@ class Controller {
     this.view.bindAddContact(this.handleAddContact);
     this.view.bindDeleteContact(this.handleDeleteContact);
     this.view.bindEditContact(this.handleContactDisplay, this.handleEditContact);
+    this.view.bindSearchMatches(this.handleSearchMatches);
   }
 
   onContactsChanged = (contacts) => {
@@ -32,6 +33,10 @@ class Controller {
 
   handleContactDisplay = (id) => {
     return this.model.getLocalContactData(id);
+  }
+
+  handleSearchMatches = (queryString) => {
+    return this.model.getLocalContactNames(queryString);
   }
 }
 

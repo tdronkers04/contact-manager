@@ -77,6 +77,12 @@ export default class Model {
     return new Contact(contactData);
   }
 
+  getLocalContactNames(queryString) {
+    let contacts = this.contacts;
+    return contacts.filter(contact => contact.full_name
+      .toLowerCase().includes(queryString));
+  }
+
   getLocalContactData(id) {
     let localObj = this.contacts.find(obj => obj.id === id);
     return localObj.formatForTemplate();

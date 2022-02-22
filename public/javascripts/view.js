@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable max-lines-per-function */
 export default class View {
   constructor() {
@@ -5,6 +6,7 @@ export default class View {
     this.addContactBtn = document.querySelector('.add-contact');
     this.modalOuter = document.querySelector('.modal-outer');
     this.emptyDiv = document.querySelector('.empty');
+    this.searchBar = document.querySelector('.search');
   }
 
   bindModalExitListener() {
@@ -82,8 +84,23 @@ export default class View {
         }, 1000);
       });
     });
+  }
 
+  bindSearchMatches(callback) {
+    let queryString = '';
+    let matchingContacts;
+    this.searchBar.addEventListener('keydown', event => {
+      if ((event.keyCode >= 65 && event.keyCode <= 90) || event.keyCode === 32) {
+        queryString += event.key.toLowerCase();
+        matchingContacts = callback(queryString);
+      }
+      if (event.keyCode === 8) {
+        queryString = queryString.slice(0, queryString.length - 1);
+        matchingContacts = callback(queryString);
+      }
 
+      this.displayContacts(matchingContacts);
+    });
   }
 
   displayContacts(contacts) {
@@ -106,4 +123,5 @@ export default class View {
     }
     // console.log(contacts); // DEBUGGING
   }
+
 }
