@@ -1,0 +1,37 @@
+[
+  {
+    "full_name": "Bob Hope",
+    "phone_number": "123",
+    "email": "bob@hope.com",
+    "tags": "other",
+    "id": 1
+  },
+  {
+    "full_name": "ali",
+    "phone_number": "123",
+    "email": "alison.dronkers@gmail.com",
+    "tags": "family,friends,school",
+    "id": 2
+  },
+  {
+    "full_name": "Joe Montana",
+    "phone_number": "4155551616",
+    "email": "joe@nflhof.com",
+    "tags": "family,friends,work,school",
+    "id": 5
+  },
+  {
+    "full_name": "Bert",
+    "phone_number": "123",
+    "email": "bert@sesamestreet.com",
+    "tags": "family",
+    "id": 6
+  },
+  {
+    "full_name": "Jerry Rice",
+    "phone_number": "4152996680",
+    "email": "jerry@hof.com",
+    "tags": "work,other",
+    "id": 7
+  }
+]
