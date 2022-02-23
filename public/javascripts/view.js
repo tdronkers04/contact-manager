@@ -10,6 +10,7 @@ export default class View {
     this.modalOuter = document.querySelector('.modal-outer');
     this.emptyDiv = document.querySelector('.empty');
     this.searchBar = document.querySelector('.search');
+    this.tags = ["family", "friend", "work", "school"];
   }
 
   _clearSearchBar() {
@@ -37,6 +38,11 @@ export default class View {
     this.addContactBtn.addEventListener('click', () => {
       let formHtml = Handlebars.templates.form();
       this.modalOuter.innerHTML = formHtml;
+
+      let tagsHtml = Handlebars.templates.tagOptions({tags: this.tags});
+      let formTagOptions = document.querySelector('#tag-options');
+      formTagOptions.innerHTML = tagsHtml;
+
       this.modalOuter.classList.add('open');
       const newContactForm = document.querySelector('#contact-form');
 
@@ -75,6 +81,10 @@ export default class View {
         let contactData = callback1(contactID);
         let formHtml = Handlebars.templates.form(contactData);
         this.modalOuter.innerHTML = formHtml;
+
+        let tagsHtml = Handlebars.templates.tagOptions({tags: this.tags});
+        let formTagOptions = document.querySelector('#tag-options');
+        formTagOptions.innerHTML = tagsHtml;
 
         contactData.tags.forEach(tag => {
           let optionElement = document.getElementById(tag);
@@ -150,6 +160,6 @@ export default class View {
     } else {
       this.emptyDiv.classList.remove('hidden');
     }
-    console.log(contacts); // DEBUGGING
+    // console.log(contacts); // DEBUGGING
   }
 }

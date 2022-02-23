@@ -1,0 +1,6 @@
+<label for="tags">Tags: </label>
+<select name="tags" id="tags" multiple>
+  {{#each tags}}
+  <option id="{{this}}" value="{{this}}">{{this}}</option>
+  {{/each}}
+</select>

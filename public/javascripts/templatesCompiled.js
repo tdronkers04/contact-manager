@@ -61,6 +61,28 @@ templates['form'] = template({"1":function(container,depth0,helpers,partials,dat
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"full_name") : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data,"loc":{"start":{"line":2,"column":2},"end":{"line":6,"column":9}}})) != null ? stack1 : "")
     + "  <form id=\"contact-form\">\n"
     + ((stack1 = lookupProperty(helpers,"if").call(alias1,(depth0 != null ? lookupProperty(depth0,"full_name") : depth0),{"name":"if","hash":{},"fn":container.program(5, data, 0),"inverse":container.program(7, data, 0),"data":data,"loc":{"start":{"line":8,"column":4},"end":{"line":38,"column":11}}})) != null ? stack1 : "")
-    + "    <div class=\"form-field\">\n      <label for=\"tags\">Tags: </label>\n      <select name=\"tags\" id=\"tags\" multiple>\n        <option id=\"family\" value=\"family\">Family</option>\n        <option id=\"friend\" value=\"friend\">Friend</option>\n        <option id=\"work\" value=\"work\">Work</option>\n        <option id=\"school\" value=\"school\">School</option>\n        <option id=\"other\" value=\"other\">Other</option>\n      </select>\n    </div>\n    <input class=\"submit\" type=\"submit\" value=\"Submit\">\n  </form>\n</div>";
+    + "    <div class=\"form-field\" id=\"tag-options\"></div>\n    <input class=\"submit\" type=\"submit\" value=\"Submit\">\n  </form>\n</div>";
+},"useData":true});
+templates['tagOptions'] = template({"1":function(container,depth0,helpers,partials,data) {
+    var alias1=container.lambda, alias2=container.escapeExpression;
+
+  return "  <option id=\""
+    + alias2(alias1(depth0, depth0))
+    + "\" value=\""
+    + alias2(alias1(depth0, depth0))
+    + "\">"
+    + alias2(alias1(depth0, depth0))
+    + "</option>\n";
+},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<label for=\"tags\">Tags: </label>\n<select name=\"tags\" id=\"tags\" multiple>\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"tags") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":3,"column":2},"end":{"line":5,"column":11}}})) != null ? stack1 : "")
+    + "</select>";
 },"useData":true});
 })();
