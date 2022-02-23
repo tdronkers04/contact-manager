@@ -10,7 +10,6 @@ export default class View {
     this.modalOuter = document.querySelector('.modal-outer');
     this.emptyDiv = document.querySelector('.empty');
     this.searchBar = document.querySelector('.search');
-    this.tags = ["family", "friend", "work", "school"];
   }
 
   _clearSearchBar() {
@@ -34,12 +33,13 @@ export default class View {
     });
   }
 
-  bindAddContact(callback) {
+  bindAddContact(callback1, callback2) {
     this.addContactBtn.addEventListener('click', () => {
       let formHtml = Handlebars.templates.form();
       this.modalOuter.innerHTML = formHtml;
 
-      let tagsHtml = Handlebars.templates.tagOptions({tags: this.tags});
+      let existingTags = callback2();
+      let tagsHtml = Handlebars.templates.tagOptions({tags: existingTags});
       let formTagOptions = document.querySelector('#tag-options');
       formTagOptions.innerHTML = tagsHtml;
 
@@ -51,7 +51,7 @@ export default class View {
         event.stopPropagation();
 
         let formData = new FormData(newContactForm);
-        callback(formData);
+        callback1(formData);
         this._clearSearchBar();
         setTimeout(() => {
           this.modalOuter.classList.remove('open');
@@ -73,7 +73,7 @@ export default class View {
     });
   }
 
-  bindEditContact(callback1, callback2) {
+  bindEditContact(callback1, callback2, callback3) {
     let contactID = null;
     this.listDiv.addEventListener('click', event => {
       if (event.target.classList.contains('edit-btn')) {
@@ -82,7 +82,8 @@ export default class View {
         let formHtml = Handlebars.templates.form(contactData);
         this.modalOuter.innerHTML = formHtml;
 
-        let tagsHtml = Handlebars.templates.tagOptions({tags: this.tags});
+        let existingTags = callback3();
+        let tagsHtml = Handlebars.templates.tagOptions({tags: existingTags});
         let formTagOptions = document.querySelector('#tag-options');
         formTagOptions.innerHTML = tagsHtml;
 
@@ -112,7 +113,7 @@ export default class View {
   bindSearchMatches(callback) {
     let matchingContacts = [];
     this.searchBar.addEventListener('keydown', event => {
-      console.log(this.queryString);
+      console.log(this.queryString); // debugging
 
       if ((event.keyCode >= 65 && event.keyCode <= 90) || event.keyCode === 32 || event.keyCode === 51) {
         this.queryString += event.key.toLowerCase();
@@ -160,6 +161,6 @@ export default class View {
     } else {
       this.emptyDiv.classList.remove('hidden');
     }
-    // console.log(contacts); // DEBUGGING
+    console.log(contacts); // DEBUGGING
   }
 }

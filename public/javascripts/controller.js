@@ -10,9 +10,9 @@ class Controller {
     this.view.modalExitListener();
     this.view.tagLinkListener();
     this.model.bindContactsChanged(this.onContactsChanged);
-    this.view.bindAddContact(this.handleAddContact);
+    this.view.bindAddContact(this.handleAddContact, this.handleGetTags);
     this.view.bindDeleteContact(this.handleDeleteContact);
-    this.view.bindEditContact(this.handleContactDisplay, this.handleEditContact);
+    this.view.bindEditContact(this.handleContactDisplay, this.handleEditContact, this.handleGetTags);
     this.view.bindSearchMatches(this.handleSearchMatches);
   }
 
@@ -38,6 +38,10 @@ class Controller {
 
   handleSearchMatches = (queryString) => {
     return this.model.getMatchingContacts(queryString);
+  }
+
+  handleGetTags = () => {
+    return this.model.getUniqueTags();
   }
 }
 

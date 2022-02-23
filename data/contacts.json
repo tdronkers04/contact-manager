@@ -17,49 +17,14 @@
     "id": 3,
     "full_name": "Pete Hanson",
     "email": "ph@example.com",
-    "phone_number": "54321098761",
+    "phone_number": "15321098761",
     "tags": null
   },
   {
     "full_name": "Jeff dronkers",
     "phone_number": "17203204580",
     "email": "jeff@dronkers.com",
-    "tags": "friend,work",
+    "tags": "friend,family",
     "id": 4
-  },
-  {
-    "full_name": "Tim Dronkers",
-    "phone_number": "17203204580",
-    "email": "tim@dronkers.com",
-    "tags": "school,other",
-    "id": 6
-  },
-  {
-    "full_name": "Ali Dronkers",
-    "phone_number": "7206352394",
-    "email": "ali@dronkers.com",
-    "tags": "friend",
-    "id": 7
-  },
-  {
-    "full_name": "Cheryl Dronkers",
-    "phone_number": "19254139428",
-    "email": "cdronkers@comcast.net",
-    "tags": "friend,work",
-    "id": 8
-  },
-  {
-    "full_name": "Joe Blow",
-    "phone_number": "7205556661",
-    "email": "j@b.com",
-    "tags": null,
-    "id": 9
-  },
-  {
-    "full_name": "Other person",
-    "phone_number": "2223332222",
-    "email": "a@p.com",
-    "tags": "work",
-    "id": 10
   }
 ]

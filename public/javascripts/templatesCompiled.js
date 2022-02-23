@@ -83,6 +83,6 @@ templates['tagOptions'] = template({"1":function(container,depth0,helpers,partia
 
   return "<label for=\"tags\">Tags: </label>\n<select name=\"tags\" id=\"tags\" multiple>\n"
     + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"tags") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":3,"column":2},"end":{"line":5,"column":11}}})) != null ? stack1 : "")
-    + "</select>";
+    + "</select>\n<div class=\"form-field\">\n  <label for=\"custom-tag\">Custom Tag (optional): </label>\n  <input type=\"text\" name=\"custom_tag\" id=\"custom_tag\">\n</div>";
 },"useData":true});
 })();

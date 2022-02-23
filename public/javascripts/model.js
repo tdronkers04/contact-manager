@@ -77,6 +77,8 @@ export default class Model {
         contactData[key] += `,${value}`;
       } else if (key === 'phone_number') {
         contactData[key] = this._extractDigits(value);
+      } else if (key === 'custom_tag' && value) {
+        contactData['tags'] += contactData['tags'] ? `,${value}` : value;
       } else {
         contactData[key] = value;
       }
@@ -90,6 +92,20 @@ export default class Model {
     }
 
     return new Contact(contactData);
+  }
+
+  getUniqueTags() {
+    let allTags = '';
+    let uniqueTags = [];
+    this.contacts.forEach(contact => allTags += `,${contact.tags}`);
+
+    allTags.split(',').forEach(tag => {
+      if (!uniqueTags.includes(tag) && tag && tag !== 'null') {
+        uniqueTags.push(tag);
+      }
+    });
+
+    return uniqueTags;
   }
 
   getMatchingContacts(queryString) {
