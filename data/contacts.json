@@ -3,14 +3,14 @@
     "full_name": "Joe Montana",
     "phone_number": "4155551616",
     "email": "joe@nflhof.yahoo.com",
-    "tags": "family,friends",
+    "tags": "work",
     "id": 5
   },
   {
     "full_name": "Jerry Rice",
     "phone_number": "4152996680",
     "email": "jerry@hof.com",
-    "tags": "friends,work",
+    "tags": "family",
     "id": 7
   },
   {
@@ -35,24 +35,17 @@
     "id": 10
   },
   {
-    "full_name": "Garrison heasrst",
-    "phone_number": "2221115555",
-    "email": "gmoney@gmail.com",
-    "tags": "family,friends",
-    "id": 11
-  },
-  {
     "full_name": "Steve Young",
     "phone_number": "121111222",
     "email": "young@byu.edu",
-    "tags": "friends",
+    "tags": "family,friends",
     "id": 12
   },
   {
     "full_name": "Nick Bosa",
     "phone_number": "8889997777",
     "email": "nick@golds.com",
-    "tags": "work,school",
+    "tags": "family,friends",
     "id": 13
   },
   {
@@ -75,5 +68,12 @@
     "email": "shanny@49ers.com",
     "tags": "work,school",
     "id": 16
+  },
+  {
+    "full_name": "JJ Stokes",
+    "phone_number": "1112223333",
+    "email": "jj_s@ucla.edu",
+    "tags": "work,other",
+    "id": 17
   }
 ]

@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable max-lines-per-function */
+const searchEvent = new CustomEvent('search');
+
 export default class View {
   constructor() {
     this.listDiv = document.querySelector('.contacts');
@@ -9,7 +11,7 @@ export default class View {
     this.searchBar = document.querySelector('.search');
   }
 
-  bindModalExitListener() {
+  modalExitListener() {
     this.modalOuter.addEventListener('click', event => {
       const isOutside = !event.target.closest('.modal-inner');
       if (isOutside) {
@@ -72,7 +74,7 @@ export default class View {
         });
 
         this.modalOuter.classList.add('open');
-      }
+      } else return;
 
       const editContactForm = document.querySelector('#contact-form');
       editContactForm.addEventListener('submit', event => {
@@ -88,18 +90,32 @@ export default class View {
 
   bindSearchMatches(callback) {
     let queryString = '';
-    let matchingContacts;
+    let matchingContacts = [];
     this.searchBar.addEventListener('keydown', event => {
-      if ((event.keyCode >= 65 && event.keyCode <= 90) || event.keyCode === 32) {
+      if ((event.keyCode >= 65 && event.keyCode <= 90) || event.keyCode === 32 || event.keyCode === 51) {
         queryString += event.key.toLowerCase();
         matchingContacts = callback(queryString);
-      }
-      if (event.keyCode === 8) {
+      } else if (event.keyCode === 8) {
         queryString = queryString.slice(0, queryString.length - 1);
         matchingContacts = callback(queryString);
-      }
-
+      } else return;
       this.displayContacts(matchingContacts);
+    });
+
+    this.searchBar.addEventListener('search', event => {
+      queryString = event.target.value;
+      matchingContacts = callback(queryString);
+      this.displayContacts(matchingContacts);
+    });
+  }
+
+  tagLinkListener() {
+    this.listDiv.addEventListener('click', event => {
+      if (event.target.tagName === 'A') {
+        let searchTag = event.target.textContent.trim();
+        this.searchBar.value = `#${searchTag}`;
+        this.searchBar.dispatchEvent(new Event("search"));
+      }
     });
   }
 
@@ -121,7 +137,5 @@ export default class View {
     } else {
       this.emptyDiv.classList.remove('hidden');
     }
-    // console.log(contacts); // DEBUGGING
   }
-
 }

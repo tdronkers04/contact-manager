@@ -57,6 +57,7 @@ header .search {
   font-size: 15px;
   margin-top: 20px;
   border-color: var(--light-blue);
+  width: 215px;
 }
 
 header .add-contact {

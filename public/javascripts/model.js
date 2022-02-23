@@ -77,10 +77,21 @@ export default class Model {
     return new Contact(contactData);
   }
 
-  getLocalContactNames(queryString) {
+  getMatchingContacts(queryString) {
     let contacts = this.contacts;
-    return contacts.filter(contact => contact.full_name
-      .toLowerCase().includes(queryString));
+    let matches;
+
+    if (queryString.startsWith('#')) {
+      matches = contacts.filter(contact => {
+        return contact.tags.includes(queryString.slice(1));
+      });
+    } else {
+      matches = contacts.filter(contact => {
+        return contact.full_name.toLowerCase().includes(queryString);
+      });
+    }
+
+    return matches;
   }
 
   getLocalContactData(id) {

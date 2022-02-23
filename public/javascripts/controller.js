@@ -7,8 +7,9 @@ class Controller {
     this.model = new Model();
     this.view = new View();
     this.onContactsChanged(this.model.contacts);
+    this.view.modalExitListener();
+    this.view.tagLinkListener();
     this.model.bindContactsChanged(this.onContactsChanged);
-    this.view.bindModalExitListener();
     this.view.bindAddContact(this.handleAddContact);
     this.view.bindDeleteContact(this.handleDeleteContact);
     this.view.bindEditContact(this.handleContactDisplay, this.handleEditContact);
@@ -36,7 +37,7 @@ class Controller {
   }
 
   handleSearchMatches = (queryString) => {
-    return this.model.getLocalContactNames(queryString);
+    return this.model.getMatchingContacts(queryString);
   }
 }
 
