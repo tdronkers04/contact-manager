@@ -1,30 +1,30 @@
 [
   {
-    "full_name": "Joe Montana",
-    "phone_number": "4155551616",
-    "email": "joe@nflhof.yahoo.com",
-    "tags": "friends",
-    "id": 5
+    "id": 1,
+    "full_name": "Naveed Fida",
+    "email": "nf@example.com",
+    "phone_number": "12345678901",
+    "tags": "work,friend"
   },
   {
-    "full_name": "Nick Bosa",
-    "phone_number": "18975463321",
-    "email": "nick@theosu.edu",
-    "tags": "friends,other",
-    "id": 7
+    "id": 2,
+    "full_name": "Victor Reyes",
+    "email": "vpr@example.com",
+    "phone_number": "09876543210",
+    "tags": "work,friend"
   },
   {
-    "full_name": "Jeff Garcia",
-    "phone_number": "15108974512",
-    "email": "jeff@sjsu.edu",
-    "tags": "school,other",
-    "id": 8
+    "id": 3,
+    "full_name": "Pete Hanson",
+    "email": "ph@example.com",
+    "phone_number": "54321098761",
+    "tags": null
   },
   {
-    "full_name": "Bryant Young",
-    "phone_number": "18954523214",
-    "email": "by@notredame.edu",
-    "tags": "friends,work,school",
-    "id": 9
+    "full_name": "Tim Dronkers",
+    "phone_number": "7203204580",
+    "email": "tim@dronkers.com",
+    "tags": "work",
+    "id": 4
   }
 ]

@@ -127,6 +127,7 @@ export default class View {
         let searchTag = event.target.textContent.trim();
         this.searchBar.value = `${searchTag}`;
         this.searchBar.dispatchEvent(new Event("search"));
+        this.searchBar.focus();
       }
     });
   }

@@ -99,7 +99,8 @@ export default class Model {
 
     if (queryString.startsWith('#')) {
       matches = contacts.filter(contact => {
-        return contact.tags.includes(queryString.slice(1));
+        return contact.tags ?
+          contact.tags.includes(queryString.slice(1)) : false;
       });
     } else {
       matches = contacts.filter(contact => {
