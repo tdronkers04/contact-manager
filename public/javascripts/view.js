@@ -78,7 +78,9 @@ export default class View {
 
         contactData.tags.forEach(tag => {
           let optionElement = document.getElementById(tag);
-          optionElement.setAttribute('selected', true);
+          if (optionElement) {
+            optionElement.setAttribute('selected', true);
+          }
         });
 
         this.modalOuter.classList.add('open');
@@ -121,7 +123,7 @@ export default class View {
 
   tagLinkListener() {
     this.listDiv.addEventListener('click', event => {
-      if (event.target.tagName === 'A') {
+      if (event.target.tagName === 'A' && event.target.textContent !== '#empty') {
         let searchTag = event.target.textContent.trim();
         this.searchBar.value = `${searchTag}`;
         this.searchBar.dispatchEvent(new Event("search"));

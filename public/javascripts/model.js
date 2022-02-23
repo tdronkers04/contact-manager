@@ -86,6 +86,10 @@ export default class Model {
     contactData.id = this.contacts.length > 0 ?
       this.contacts[this.contacts.length - 1].id + 1 : 1;
 
+    if (!contactData.tags) {
+      contactData.tags = null;
+    }
+
     return new Contact(contactData);
   }
 

@@ -8,7 +8,8 @@
     {{#if full_name}}
     <div class="'form-field">
       <label for="full_name">Full Name: </label>
-      <input type="text" name="full_name" id="full_name" value="{{full_name}}" required>
+      <input type="text" pattern="([a-zA-Z]+)(\s)([a-zA-Z]+)" title="first_name last_name, separated by a single space"
+        name="full_name" id="full_name" value="{{full_name}}" required>
     </div>
     <div class="form-field">
       <label for="email">e-mail Address: </label>
@@ -16,20 +17,23 @@
     </div>
     <div class="form-field">
       <label for="phone_number">Phone Number: </label>
-      <input type="tel" name="phone_number" id="phone_number" value="{{phone_number}}" required>
+      <input type="tel" pattern="^(1|\+1)?(\(|-)?(\d{3})(\)|-)?(\d{3})(-)?(\d{4})$" title="US Phone numbers only"
+        name="phone_number" id="phone_number" value="{{phone_number}}" required>
     </div>
     {{else}}
     <div class="'form-field">
       <label for="full_name">Full Name: </label>
-      <input type="text" name="full_name" id="full_name" required>
+      <input type="text" pattern="([a-zA-Z]+)(\s)([a-zA-Z]+)" title="first_name last_name, separated by a single space"
+        placeholder="Jane Doe" name="full_name" id="full_name" required>
     </div>
     <div class="form-field">
       <label for="email">e-mail Address: </label>
-      <input type="email" name="email" id="email" required>
+      <input type="email" placeholder="name@domain.com" name="email" id="email" required>
     </div>
     <div class="form-field">
       <label for="phone_number">Phone Number: </label>
-      <input type="tel" name="phone_number" id="phone_number" required>
+      <input type="tel" pattern="^(1|\+1)?(\(|-)?(\d{3})(\)|-)?(\d{3})(-)?(\d{4})$" title="US Phone numbers only"
+        placeholder="(111)111-1111" name="phone_number" id="phone_number" required>
     </div>
     {{/if}}
     <div class="form-field">

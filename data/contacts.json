@@ -7,24 +7,24 @@
     "id": 5
   },
   {
-    "full_name": "Jerry Rice",
-    "phone_number": "4159878852",
-    "email": "jerry@hof.com",
-    "tags": "friends",
-    "id": 6
-  },
-  {
-    "full_name": "Nic Bosa",
+    "full_name": "Nick Bosa",
     "phone_number": "18975463321",
     "email": "nick@theosu.edu",
-    "tags": "friends",
+    "tags": "friends,other",
     "id": 7
   },
   {
-    "full_name": "John Taylor",
-    "phone_number": "14159658742",
-    "email": "john@niners.com",
-    "tags": "other",
+    "full_name": "Jeff Garcia",
+    "phone_number": "15108974512",
+    "email": "jeff@sjsu.edu",
+    "tags": "school,other",
     "id": 8
+  },
+  {
+    "full_name": "Bryant Young",
+    "phone_number": "18954523214",
+    "email": "by@notredame.edu",
+    "tags": "friends,work,school",
+    "id": 9
   }
 ]
