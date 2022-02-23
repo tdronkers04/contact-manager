@@ -21,7 +21,7 @@ class Contact {
       return [intlCode, '(', match[2], ')', match[3], '-', match[4]].join('');
     }
 
-    return null;
+    return digitStr;
   }
 
   formatForTemplate() {
