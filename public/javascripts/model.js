@@ -13,9 +13,21 @@ class Contact {
     return JSON.stringify(this);
   }
 
+  _formatPhoneNumber(digitStr) {
+    let match = digitStr.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
+
+    if (match) {
+      let intlCode = (match[1] ? '+1' : '');
+      return [intlCode, '(', match[2], ')', match[3], '-', match[4]].join('');
+    }
+
+    return null;
+  }
+
   formatForTemplate() {
     let clone = JSON.parse(JSON.stringify(this));
     clone.tags = clone.tags ? clone.tags.split(',') : ["empty"];
+    clone.phone_number = this._formatPhoneNumber(clone.phone_number);
     return clone;
   }
 }
@@ -53,7 +65,7 @@ export default class Model {
     }), 1, newObj);
   }
 
-  _formatPhoneNumber(string) {
+  _extractDigits(string) {
     const regex = /[0-9]/g;
     const digits = string.match(regex);
     return digits.join('');
@@ -65,7 +77,7 @@ export default class Model {
       if (key in contactData) {
         contactData[key] += `,${value}`;
       } else if (key === 'phone_number') {
-        contactData[key] = this._formatPhoneNumber(value);
+        contactData[key] = this._extractDigits(value);
       } else {
         contactData[key] = value;
       }
@@ -105,7 +117,9 @@ export default class Model {
     let newData = this._formatFormData(formData);
 
     for (let prop in newData) {
-      localObjClone[prop] = newData[prop];
+      if (prop !== 'id') {
+        localObjClone[prop] = newData[prop]; // do not update id
+      }
     }
 
     let request = new XMLHttpRequest();
@@ -119,6 +133,7 @@ export default class Model {
         this._swapContactWithUpdate(localObj.id, new Contact(localObjClone));
         this._commit(this.contacts);
       } else {
+        console.log(request);
         alert("Something went wrong. Please Try Again Later.");
       }
     });

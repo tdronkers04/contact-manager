@@ -1,8 +1,12 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['contact'] = template({"1":function(container,depth0,helpers,partials,data) {
-    return "      <a href=\"#\">"
-    + container.escapeExpression(container.lambda(depth0, depth0))
+    var alias1=container.lambda, alias2=container.escapeExpression;
+
+  return "      <a href=\"#\" name=\"#"
+    + alias2(alias1(depth0, depth0))
+    + "\">#"
+    + alias2(alias1(depth0, depth0))
     + "</a>\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {

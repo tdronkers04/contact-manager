@@ -3,77 +3,28 @@
     "full_name": "Joe Montana",
     "phone_number": "4155551616",
     "email": "joe@nflhof.yahoo.com",
-    "tags": "work",
+    "tags": "friends",
     "id": 5
   },
   {
     "full_name": "Jerry Rice",
-    "phone_number": "4152996680",
+    "phone_number": "4159878852",
     "email": "jerry@hof.com",
-    "tags": "family",
+    "tags": "friends",
+    "id": 6
+  },
+  {
+    "full_name": "Nic Bosa",
+    "phone_number": "18975463321",
+    "email": "nick@theosu.edu",
+    "tags": "friends",
     "id": 7
   },
   {
-    "full_name": "Terrell Owens",
-    "phone_number": "8889998181",
-    "email": "to@cowboys.com",
+    "full_name": "John Taylor",
+    "phone_number": "14159658742",
+    "email": "john@niners.com",
     "tags": "other",
     "id": 8
-  },
-  {
-    "full_name": "Bryant Young",
-    "phone_number": "2221113333",
-    "email": "by@botredame.edy",
-    "tags": "school,other",
-    "id": 9
-  },
-  {
-    "full_name": "Bill Walsh",
-    "phone_number": "8887774452",
-    "email": "billy@sjsu.edu",
-    "tags": "friends,work",
-    "id": 10
-  },
-  {
-    "full_name": "Steve Young",
-    "phone_number": "121111222",
-    "email": "young@byu.edu",
-    "tags": "family,friends",
-    "id": 12
-  },
-  {
-    "full_name": "Nick Bosa",
-    "phone_number": "8889997777",
-    "email": "nick@golds.com",
-    "tags": "family,friends",
-    "id": 13
-  },
-  {
-    "full_name": "Frank Gore",
-    "phone_number": "8889996622",
-    "email": "frank@miami.edu",
-    "tags": "school",
-    "id": 14
-  },
-  {
-    "full_name": "Charlie Gardner",
-    "phone_number": "1112223333",
-    "email": "charlie@49ers.com",
-    "tags": "school",
-    "id": 15
-  },
-  {
-    "full_name": "Kyle Shanahan",
-    "phone_number": "1112223333",
-    "email": "shanny@49ers.com",
-    "tags": "work,school",
-    "id": 16
-  },
-  {
-    "full_name": "JJ Stokes",
-    "phone_number": "1112223333",
-    "email": "jj_s@ucla.edu",
-    "tags": "work,other",
-    "id": 17
   }
 ]

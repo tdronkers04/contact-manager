@@ -4,11 +4,17 @@ const searchEvent = new CustomEvent('search');
 
 export default class View {
   constructor() {
+    this.queryString = '';
     this.listDiv = document.querySelector('.contacts');
     this.addContactBtn = document.querySelector('.add-contact');
     this.modalOuter = document.querySelector('.modal-outer');
     this.emptyDiv = document.querySelector('.empty');
     this.searchBar = document.querySelector('.search');
+  }
+
+  _clearSearchBar() {
+    this.searchBar.value = '';
+    this.queryString = '';
   }
 
   modalExitListener() {
@@ -40,6 +46,7 @@ export default class View {
 
         let formData = new FormData(newContactForm);
         callback(formData);
+        this._clearSearchBar();
         setTimeout(() => {
           this.modalOuter.classList.remove('open');
         }, 1000);
@@ -54,6 +61,7 @@ export default class View {
         let result = window.confirm("Are you sure you want to delete this contact?");
         if (result) {
           callback(contactID);
+          this._clearSearchBar();
         }
       }
     });
@@ -81,6 +89,7 @@ export default class View {
         event.preventDefault();
         let formData = new FormData(editContactForm);
         callback2(contactID, formData);
+        this._clearSearchBar();
         setTimeout(() => {
           this.modalOuter.classList.remove('open');
         }, 1000);
@@ -89,22 +98,23 @@ export default class View {
   }
 
   bindSearchMatches(callback) {
-    let queryString = '';
     let matchingContacts = [];
     this.searchBar.addEventListener('keydown', event => {
+      console.log(this.queryString);
+
       if ((event.keyCode >= 65 && event.keyCode <= 90) || event.keyCode === 32 || event.keyCode === 51) {
-        queryString += event.key.toLowerCase();
-        matchingContacts = callback(queryString);
+        this.queryString += event.key.toLowerCase();
+        matchingContacts = callback(this.queryString);
       } else if (event.keyCode === 8) {
-        queryString = queryString.slice(0, queryString.length - 1);
-        matchingContacts = callback(queryString);
+        this.queryString = this.queryString.slice(0, this.queryString.length - 1);
+        matchingContacts = callback(this.queryString);
       } else return;
       this.displayContacts(matchingContacts);
     });
 
     this.searchBar.addEventListener('search', event => {
-      queryString = event.target.value;
-      matchingContacts = callback(queryString);
+      this.queryString = event.target.value;
+      matchingContacts = callback(this.queryString);
       this.displayContacts(matchingContacts);
     });
   }
@@ -113,7 +123,7 @@ export default class View {
     this.listDiv.addEventListener('click', event => {
       if (event.target.tagName === 'A') {
         let searchTag = event.target.textContent.trim();
-        this.searchBar.value = `#${searchTag}`;
+        this.searchBar.value = `${searchTag}`;
         this.searchBar.dispatchEvent(new Event("search"));
       }
     });
@@ -137,5 +147,6 @@ export default class View {
     } else {
       this.emptyDiv.classList.remove('hidden');
     }
+    console.log(contacts); // DEBUGGING
   }
 }
