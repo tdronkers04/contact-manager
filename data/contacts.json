@@ -21,10 +21,17 @@
     "tags": null
   },
   {
-    "full_name": "Tim Dronkers",
+    "full_name": "Jeff dronkers",
+    "phone_number": "17203204580",
+    "email": "jeff@dronkers.com",
+    "tags": "work,school",
+    "id": 4
+  },
+  {
+    "full_name": "tim dronkers",
     "phone_number": "7203204580",
     "email": "tim@dronkers.com",
-    "tags": "work",
-    "id": 4
+    "tags": "friend,work",
+    "id": 5
   }
 ]
