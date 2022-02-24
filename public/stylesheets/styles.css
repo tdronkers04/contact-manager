@@ -167,3 +167,12 @@ header .add-contact {
   margin-top: 10px;
   width: 30%;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 12px;
+}

@@ -1,13 +1,13 @@
 {
   "name": "contact_manager",
-  "version": "0.0.1",
-  "author": "NF",
+  "version": "1.0.0",
+  "author": "Tim Dronkers",
+  "license": "ISC",
   "scripts": {
     "server": "node contacts.js",
     "start": "cross-env NODE_ENV=dev npm run server ",
     "test": "mocha --timeout 10000"
   },
-  "private": true,
   "dependencies": {
     "body-parser": "1.14.1",
     "express": "4.13.3",

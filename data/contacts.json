@@ -54,5 +54,12 @@
     "email": "timbo_bball@aol.com",
     "tags": "friend,softball",
     "id": 9
+  },
+  {
+    "full_name": "George Kittle",
+    "phone_number": "4158996633",
+    "email": "george@hawkeyes.edu",
+    "tags": "other",
+    "id": 10
   }
 ]
