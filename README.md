@@ -8,6 +8,20 @@
 
 This front-end focused project was built with HTML, CSS, vanilla JavaScript and Handlebars client-side templating.
 
+## Installation
+
+- Navigate to a new folder in your terminal and execute the following command (SSH):
+
+  `git clone git@github.com:tdronkers04/contact-manager.git`
+
+- Install the necessary dependencies with `npm install`
+
+## How to Use
+
+- Run `npm start` to start the server. You should see *listening on port 3000 of localhost...* in your logs
+
+- navigate to `localhost:3000` in your browser
+
 ## Author
 
 👤 **Tim Dronkers**
