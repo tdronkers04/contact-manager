@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-/* eslint-disable max-lines-per-function */
 class Contact {
   constructor(obj) {
     this.id = obj.id;
@@ -73,17 +71,36 @@ export default class Model {
   _formatFormData(formData) {
     let contactData = {};
     formData.forEach((value, key) => {
-      if (key in contactData) {
-        contactData[key] += `,${value}`;
-      } else if (key === 'phone_number') {
-        contactData[key] = this._extractDigits(value);
-      } else if (key === 'custom_tag' && value) {
-        contactData['tags'] += contactData['tags'] ? `,${value}` : value;
-      } else {
-        contactData[key] = value;
+      switch (key) {
+        case 'phone_number':
+          contactData[key] = this._extractDigits(value);
+          break;
+        case 'email':
+          contactData[key] = value;
+          break;
+        case 'full_name':
+          contactData[key] = value;
+          break;
+        case 'tags':
+          if (value) {
+            if (contactData[key]) {
+              contactData[key] += `,${value}`;
+            } else {
+              contactData[key] = value;
+            }
+          }
+          break;
+        case 'custom_tag':
+          if (value) {
+            if (contactData.tags) {
+              contactData.tags += `,${value}`;
+            } else {
+              contactData.tags = value;
+            }
+          }
+          break;
       }
     });
-
     contactData.id = this.contacts.length > 0 ?
       this.contacts[this.contacts.length - 1].id + 1 : 1;
 
@@ -97,7 +114,9 @@ export default class Model {
   getUniqueTags() {
     let allTags = '';
     let uniqueTags = [];
-    this.contacts.forEach(contact => allTags += `,${contact.tags}`);
+    this.contacts.forEach(contact => {
+      allTags += `,${contact.tags}`;
+    });
 
     allTags.split(',').forEach(tag => {
       if (!uniqueTags.includes(tag) && tag && tag !== 'null') {
@@ -153,7 +172,6 @@ export default class Model {
         this._swapContactWithUpdate(localObj.id, new Contact(localObjClone));
         this._commit(this.contacts);
       } else {
-        console.log(request);
         alert("Something went wrong. Please Try Again Later.");
       }
     });

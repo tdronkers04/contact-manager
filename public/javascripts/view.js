@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-/* eslint-disable max-lines-per-function */
 const searchEvent = new CustomEvent('search');
 
 export default class View {
@@ -48,14 +46,11 @@ export default class View {
 
       newContactForm.addEventListener('submit', event => {
         event.preventDefault();
-        event.stopPropagation();
 
         let formData = new FormData(newContactForm);
         callback1(formData);
         this._clearSearchBar();
-        setTimeout(() => {
-          this.modalOuter.classList.remove('open');
-        }, 1000);
+        setTimeout(() => this.modalOuter.classList.remove('open'), 1000);
       });
     });
   }
@@ -103,9 +98,7 @@ export default class View {
         let formData = new FormData(editContactForm);
         callback2(contactID, formData);
         this._clearSearchBar();
-        setTimeout(() => {
-          this.modalOuter.classList.remove('open');
-        }, 1000);
+        setTimeout(() => this.modalOuter.classList.remove('open'), 1000);
       });
     });
   }
@@ -113,7 +106,6 @@ export default class View {
   bindSearchMatches(callback) {
     let matchingContacts = [];
     this.searchBar.addEventListener('keydown', event => {
-      console.log(this.queryString); // debugging
 
       if ((event.keyCode >= 65 && event.keyCode <= 90) || event.keyCode === 32 || event.keyCode === 51) {
         this.queryString += event.key.toLowerCase();
@@ -161,6 +153,5 @@ export default class View {
     } else {
       this.emptyDiv.classList.remove('hidden');
     }
-    console.log(contacts); // DEBUGGING
   }
 }
