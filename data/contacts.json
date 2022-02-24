@@ -17,14 +17,42 @@
     "id": 3,
     "full_name": "Pete Hanson",
     "email": "ph@example.com",
-    "phone_number": "15321098761",
+    "phone_number": "54321098761",
     "tags": null
   },
   {
-    "full_name": "Jeff dronkers",
-    "phone_number": "17203204580",
-    "email": "jeff@dronkers.com",
-    "tags": "friend,family",
-    "id": 4
+    "full_name": "Lightning McQueen",
+    "phone_number": "17204159874",
+    "email": "lmc@disney.com",
+    "tags": "other",
+    "id": 5
+  },
+  {
+    "full_name": "Ali Dronkers",
+    "phone_number": "17205469872",
+    "email": "monty@yahoo.com",
+    "tags": "family,school",
+    "id": 6
+  },
+  {
+    "full_name": "Woody Montgomery",
+    "phone_number": "10000000000",
+    "email": "john@yahoo.com",
+    "tags": "friend,pet",
+    "id": 7
+  },
+  {
+    "full_name": "Stacy Lee",
+    "phone_number": "9258723670",
+    "email": "stacky@sdsu.edu",
+    "tags": "friend,school",
+    "id": 8
+  },
+  {
+    "full_name": "Tim Crawford",
+    "phone_number": "15308958742",
+    "email": "timbo_bball@aol.com",
+    "tags": "friend,softball",
+    "id": 9
   }
 ]
