@@ -5,7 +5,7 @@
   "license": "ISC",
   "scripts": {
     "server": "node contacts.js",
-    "start": "cross-env NODE_ENV=dev npm run server ",
+    "start": "npm run server",
     "test": "mocha --timeout 10000",
     "heroku-postbuild": "npm install --production"
   },
